@@ -17,9 +17,9 @@
 git clone https://github.com/1c7/miniapp_notice_demo.git
 ```
 然后使用"微信开发者工具"打开此文件夹即可。      
+![](img/demo.png)
 
-
-然后因为代码其实很短，我现在直接列出来，    
+其实代码很短，为了方便懒人少点击几次鼠标，我现在直接列出来，    
 你是要 git clone 还是直接复制黏贴下面的代码随你。
 
 `index.wxml`
