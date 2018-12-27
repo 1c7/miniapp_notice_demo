@@ -1,4 +1,4 @@
-### 微信小程序 服务通知 Demo
+# 微信小程序 服务通知 Demo
 服务通知是微信小程序直接推送信息给用户的方式，用户就无需打开小程序    
 这个库的意义是给其他小程序开发者提供参考    
 
@@ -12,44 +12,47 @@
 此处仅做代码托管   
 
 
-### 如何查看小程序代码？
+## 如何查看小程序代码？
 ```
-    git clone https://github.com/1c7/miniapp_notice_demo.git
+git clone https://github.com/1c7/miniapp_notice_demo.git
 ```
-然后使用"微信开发者工具"打开此文件夹即可。
-然后因为代码其实很短，我现在直接列出来，你是要 git clone 还是直接复制黏贴下面的代码随你。
+然后使用"微信开发者工具"打开此文件夹即可。      
+
+
+然后因为代码其实很短，我现在直接列出来，    
+你是要 git clone 还是直接复制黏贴下面的代码随你。
 
 `index.wxml`
 ```html
-    <view>测试服务通知获取 form_id</view>
-    <view>
-        <form bindsubmit="submit" report-submit='true'>
-            <button form-type="submit" type="default" size="mini">提交</button>
-        </form>
-    </view>
-    {{formID}}
+<view>测试服务通知获取 form_id</view>
+<view>
+    <form bindsubmit="submit" report-submit='true'>
+        <button form-type="submit" type="default" size="mini">提交</button>
+    </form>
+</view>
+{{formID}}
 ```
 
 `index.js`
 ```javascript
-    Page({
-        data: {
-            formID: null
-        },
-        submit: function(e) {
-            var form_id = e.detail.formId;
-            console.log(form_id);
-            this.setData({
+Page({
+    data: {
+        formID: null
+    },
+    submit: function(e) {
+        var form_id = e.detail.formId;
+        console.log(form_id);
+        this.setData({
             formID: form_id
-            });
-            // 下一步:
-            // 现在拿到了 form_id 就应该发给后台了
-            // 后台可以把 form_id 存起来，或者马上发送服务通知，具体取决于你的业务需求
-        }
-    });
+        });
+        // 现在拿到了 form_id
+        // 下一步就应该发给后台了
+        // 后台可以把 form_id 存起来，或者马上发送服务通知，具体取决于你的业务需求
+    }
+});
 ```
 
-### Ruby on Rails 代码
+## Ruby on Rails 代码
 
 
 `app/controllers/xxx_controller.rb`
